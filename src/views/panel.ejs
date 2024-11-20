@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('commons/header.ejs'); %>  
+
+    <div class="contenedor-datos">
+        <div class="logo-contenedor">
+            <img src="public/img/logo_grande_transparente.png" alt="Logo de la Empresa" class="logo">
+        </div>
+        <div class="tarjetas-container">
+            <div class="tarjeta">
+                <a href="/panel" data-content="Clientes" class="link-general">
+                    <span class="material-symbols-outlined icono-general">home</span>Inicio
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a href="/vistaClientes" data-content="Clientes" class="link-general">
+                    <span class="material-symbols-outlined icono-general">format_list_bulleted</span>Clientes
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a href="/solicitudes" data-content="Solicitudes" class="link-general">
+                    <span class="material-symbols-outlined icono-general">visibility</span>Solicitudes
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a href="/cargar_usuario" data-content="addCliente" id="cargar-cliente" class="link-general">
+                    <span class="material-symbols-outlined icono-general">upgrade</span>Cargar cliente
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a href="/crear_usuario" data-content="addUsuario" id="cargar-usuario" class="link-general">
+                    <span class="material-symbols-outlined icono-general">add</span>Crear usuario
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a href="/coberturas" data-content="addCobertura" id="cargar-coberturas" class="link-general">
+                    <span class="material-symbols-outlined icono-general">open_run</span>Coberturas
+                </a>
+            </div>
+        </div>
+    </div>      
+
+    <script src="/public/js/panel.js"></script>
+    <script src="/public/js/perfil_usuario.js"></script>
+    <script src="/public/js/solicitudes.js"></script>
+</body>
+</html>

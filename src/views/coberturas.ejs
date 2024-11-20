@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('commons/header.ejs'); %>
+
+    <div class="contenedor-datos">
+        <h2>¿Qué deseas hacer?</h2>
+        <div class="tarjetas-container">
+            <div class="tarjeta">
+                <a href="/cargar_coberturas" data-content="Cargar Cobertura" id="cargar-cobertura" class="link-general">
+                    <span class="material-symbols-outlined icono-general">add_circle</span>Cargar cobertura
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a href="/editar_cobertura" data-content="Editar Cobertura" id="editar-cobertura" class="link-general">
+                    <span class="material-symbols-outlined icono-general">edit</span>Editar cobertura
+                </a>
+            </div>
+            <div class="tarjeta">
+                <a href="/buscar_cobertura" data-content="Buscar Cobertura" id="buscar-cobertura" class="link-general">
+                    <span class="material-symbols-outlined icono-general">search</span>Buscar cobertura
+                </a>
+            </div>
+        </div>
+    </div>   
+
+    <!-- JS -->
+    <script src="/public/js/panel.js"></script>
+</body>
+</html>

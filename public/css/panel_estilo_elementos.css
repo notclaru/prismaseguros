@@ -1,0 +1,744 @@
+/* ESTILOS DE LAS PESTAÑAS EN 'VER PERFIL' ------------------------------------ */
+.tabs-con-acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px; 
+    margin-bottom: 10px;
+    position: absolute;
+    right: 162px;
+}
+
+.tabs a{
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+/* pestaña activa --*/
+.tabActivo {
+    color: white;
+    background-color: #2197a3;
+    padding: 10px;
+    padding-left: 11px;
+    border-radius: 10px 10px 0 0;
+}
+
+/* pestaña descativada -- */
+.tabDesactivado {
+    background-color: #d0d2d5;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    color: #686262;
+}
+
+/* ESTILO DE LOS TÍTULOS ------------------------------------------------------ */
+
+h2, h3 {
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ESTILO DE LOS LABELS ------------------------------------------------------- */
+
+label {
+    font-weight: 600;
+    color: #555;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+/* ESTILO DE TABLAS GENERALES ------------------------------------------------- */
+
+/* opciones desabilitadas de los select -- */
+select option:disabled {
+    color: #999;
+    background-color: #f2f2f2;
+    font-style: italic;
+}
+
+/* texto chiquito informativo de los label -- */
+.helper-text {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input, 
+select {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+/*
+input:hover,
+select:hover {
+    border-color: #275f65;
+}*/
+
+input:focus,
+select:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    border-color: #2197a3;
+    outline: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #616161;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+input.editable, 
+select.editable {
+    background-color: #c1dfe2; 
+    color: rgb(30, 30, 30); 
+    border-color: #075d68; 
+}
+
+/* config. para cehckbox 'mostrar contraseña' -- */
+.checkbox-contenedor {
+    margin-top: 10px !important; 
+    display: inline-block !important; 
+}
+
+.checkbox-contenedor input[type="checkbox"] {
+    width: auto !important;
+    margin-right: 5px !important; 
+}
+
+.checkbox-contenedor label {
+    font-size: 16px !important; 
+    color: rgb(93, 93, 93) !important; 
+}
+
+/* config. para 'seleccionar archivo' -- */
+input[type="file"] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-inline-start: 1px;
+    padding: 11px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    color: #333;
+    width: 95%; 
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2197a3;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    border: 1px solid #275f65;
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #275f65;
+}
+
+input[type="date" i] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-inline-start: 1px;
+    cursor: default;
+    padding: 9px;
+    overflow: hidden;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+/* estilo input datos ingresados erroneos -- */
+.input-error {
+    border: 2px solid red !important;
+}
+
+/* ESTILOS TABLA 'CREAR USUARIO' ---------------------------------------------- */
+.form-crear-usuario table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form-crear-usuario .label-column {
+    width: 20%; 
+    padding: 12px;
+    text-align: left;
+    vertical-align: top; 
+}
+
+.form-crear-usuario .input-column {
+    width: 70%;
+    padding-right: 25px;
+}
+
+.form-crear-usuario .input-column input,
+.form-crear-usuario .input-column select {
+    width: 70%; 
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: black;
+    transition: border-color 0.3s ease;
+    margin-right: 21px;
+}
+
+.form-crear-usuario .input-column select  {
+    width: 74%;
+}
+
+.form-crear-usuario .input-column input:focus,
+.form-crear-usuario .input-column select:focus {
+    border-color: #2197a3;
+    outline: none;
+}
+
+.form-crear-usuario .input-column button {
+    margin-top: 8px; 
+}
+
+.input-container {
+    position: relative;
+    width: 100%; 
+}
+
+.input-container input {
+    width: 100%; 
+    padding-right: 50px;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: black;
+}
+
+.input-container .toggle-password {
+    position: absolute;
+    right: 185px;   
+    cursor: pointer;
+    color: #2197a3;
+    font-size: 35px !important; 
+    border: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* ESTILOS TABLAS DE VISTA PREVIA (CLIENTES Y SOLICITUDES) --------------------*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2197a3;
+    color: white;
+}
+
+th.thArchivado {
+    background-color: #00535d;
+    color: white;
+}
+
+th.thBaja {
+    background-color: #4f5f61;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+tr.trBaja:hover{
+    background-color: #dfdfdf;
+}
+
+td {
+    color: #333;
+}
+
+tbody.tbodyBaja{
+    color: #999;
+    font-style: italic;
+}
+
+.contenedor-datos table a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contenedor-datos table a:hover {
+    color: #1b7d88;
+}
+
+/* ESTILOS DE LOS BOTONES FILTRAR Y ORDENAR ----------------------------------- */
+.contenedor-datos .filtros {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.filtrar,
+.ordenar {
+    border: 1px solid #7c7b7b;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #5d5959;
+    padding: 10px 20px;
+}
+
+.filtrar:hover,
+.ordenar:hover{
+    background-color: #7c7b7b;
+}
+
+.ordenar-menu, .filtrar-menu {
+    position: relative;
+    margin-right: 20px;
+}
+
+.ordenar-menu-oculto {
+    display: none;
+    position: absolute;
+    top: 63%;
+    left: 0;
+    background-color: #5d5959;
+    z-index: 1000;
+    width: 149px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.filtrar-menu-oculto {
+    display: none;
+    position: absolute;
+    top: 63%;
+    left: 0;
+    background-color: #5d5959;
+    z-index: 1000;
+    width: 107px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.ordenar-menu-oculto a, .filtrar-menu-oculto a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.ordenar-menu-oculto a:hover, .filtrar-menu-oculto a:hover {
+    background-color: #7c7b7b; 
+}
+
+/* ESTILOS DEL BUSCADOR ------------------------------------------------------- */
+.buscador {
+    display: flex;          
+    align-items: center;
+    margin-left: auto;  
+} 
+
+/* ESTILOS PARA LAS COLUMNAS CON GRID ----------------------------------------- */
+
+/* contenedor -- */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    margin-bottom: 30px;
+}
+
+/* columnas del contenedor -- */
+.info-grid .colum1, 
+.info-grid .colum2 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor FORm que almacena colum1 y colum2 */
+
+.form-vehiculo-datos {
+    display: flex;
+}
+
+.form-vehiculo-datos .colum1 {
+    width: 450px;
+    margin-right: 10px;
+}
+
+.form-vehiculo-datos .colum2 {
+    width: 450px;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.input-vehiculo {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #616161;
+    margin-bottom: 15px;
+}
+
+/* ESTILOS DE LOS ICONOS ------------------------------------------------------ */
+
+/* config. general de icons de google -- */
+.material-symbols-outlined {
+    border-radius: 50%;
+    border: 4px solid #2197a3;   
+    padding: 5px; 
+}
+
+/* contenedor de los iconos -- */
+.configBotones{
+    line-height: 0;
+}
+
+/* iconos grandes -- */
+.logos,
+.material-symbols-outlined {
+    text-align: center;
+    color: #2197a3;    
+    font-size: 50px !important;
+}
+
+/* iconos de los botones -- */
+.material-symbols-outlined.botones {
+    color: white;    
+    font-size: 19px !important;
+    border: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;     
+    margin-right: 8px;
+}
+
+/* iconos de los listados de clientes (ver y crear usuario) -- */
+.material-symbols-outlined.opciones {
+    color: rgb(0, 0, 0) !important;    
+    font-size: 19px !important;
+    border: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;     
+    margin-right: 8px;
+    margin-left: 8px;
+    transition: transform 0.3s; 
+}
+
+.material-symbols-outlined.opciones:hover{
+    color: #033363 !important;
+    transform: scale(1.4);
+}
+
+.material-symbols-outlined.peligro:hover{
+    color: #870000 !important;
+    transform: scale(1.4);
+}
+
+.material-symbols-outlined.opcionesHead {
+    color: #2197a3 !important;
+    font-size: 49px !important;
+    border: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-left: 368px;
+}
+
+/* ESTILOS DE SECCION VEHICULOS 'VEHICULOS.EJS' ------------------------------- */
+.vehiculo {
+    background-color: #f7f9fc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #2197a3;
+}
+
+.vehiculo h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.vehiculo label {
+    margin-top: 10px;
+    font-size: 17px;
+    color: #444;
+}
+
+.vehiculo .ver-fotos {
+    width: 20%;
+    font-size: 17px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #2197a3;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* CONFIG. BOTONES ------------------------------------------------------------ */
+
+/* botones activado y desactivado --  */
+.desactivado,
+.activo {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #2197a3;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.desactivado {
+    background-color: #6c757d; 
+    cursor: default;
+}
+
+.activo:hover {
+    background-color: #275f65;
+}
+
+.cargar-cobertura {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #2197a3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    text-align: center;
+    margin-top: 30px;
+    width: 25%;
+}
+
+.cargar-cobertura:hover {
+    background-color: #44aab8;
+}
+
+.desactivado.editar-modo {
+    background-color: #2197a3; 
+    cursor: pointer;
+}
+
+/* boton poliza -- */
+.poliza{
+    text-decoration: none;
+}
+
+/* boton cancelar -- */
+.cancelar {
+    background-color: red;
+}
+
+.cancelar:hover {
+    background-color: darkred;
+}
+
+/*  boton 'eliminar vechiulo' -- */
+.eliminar-vehiculo {
+    margin-bottom: 30px;
+    background-color: red;
+    margin-left: 84%;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.eliminar-vehiculo:hover {
+    background-color: darkred;
+}
+
+/* boton de crear usuario en crearUsuario.ejs -- */
+#crear-usuario {
+    margin-top: 20px; 
+    text-align: center;
+    left: 0;
+}
+
+/* Botón de confirmar (Sweet Alert) -- */
+.btn-confirmar {
+    background-color: #2197a3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-confirmar:hover {
+    background-color: #187d89;
+}
+
+/* Botón de cancelar (SweetAlert) -- */
+.btn-salir {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-salir:hover {
+    background-color: #e04343;
+}
+
+/* ESTILO SOLICITUDES LEIDAS O NO LEIDAS -------------------------------------- */
+.no-leido {
+    background-color: #c6e3e6; 
+    font-weight: bold;
+}
+
+.no-leido:hover {
+    background-color: #aadde3; 
+    font-weight: bold;
+}
+
+/* ESTILO TARJETAS INICIO ----------------------------------------------------- */
+/* contenedor de tarjetas -- */
+.tarjetas-container {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+/* estilos tarjetas -- */
+.tarjeta {
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+    padding: 15px; 
+    text-align: center; 
+    transition: box-shadow 0.3s ease; 
+}
+
+.tarjeta:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* enlaces e iconos -- */
+.link-general {
+    display: flex; 
+    align-items: center;
+    color: #2197a3;
+    text-decoration: none; 
+    font-size: 16px; 
+}
+
+.material-symbols-outlined.icono-general {
+    font-size: 36px; 
+    margin-right: 8px;
+}
+
+/* BUSCADOR DE INICIO --------------------------------------------------------- */
+
+/* contenedor del buscador */
+.buscador-inicio {
+    display: flex; 
+    margin-top: 30px; 
+    justify-content: center; 
+}
+
+.buscador-inicio-input {
+    padding: 12px; 
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+    width: 300px; 
+    font-size: 16px; 
+    margin-right: 10px; 
+    transition: border-color 0.3s ease; 
+}
+
+.buscador-inicio-input:focus {
+    border-color: #2197a3; 
+    outline: none;
+}
+
+/* ESTILO DEL MODAL ---------------------------------------- */
+.modal {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modal-contenedor {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%; 
+    max-width: 600px; 
+    position: relative;
+}
+
+.cerrar-modal {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

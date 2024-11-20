@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('commons/head_usuario.ejs'); %>
+<body>
+    <%- include('commons/header_usuario.ejs'); %>
+    <div class="fondo">
+        <div class="contenedor">
+            <div class="saludo-usuario">
+                <p>¡Hola, <b id="nombreUsuario"><%= usuario.nombre %></b>!</p>
+            </div>
+            <div class="eleccion">
+                <p class="mensaje"><b>¿Qué querés ver?</b></p>
+                <div class="eleccion-cuerpo">
+                    <a href="/obtener-usuario" title="Datos Personales">
+                        <i class="fa fa-id-card" aria-hidden="true"></i>
+                        <p class="datos-info">Datos Personales</p>
+                    </a>
+                    <a href="/obtener-vehiculos" title="Vehículos Asegurados">
+                        <i class="fa fa-car" aria-hidden="true"></i>
+                        <p class="datos-info">Vehículos Asegurados</p>
+                    </a>
+                    <a href="/usuario/credenciales" title="Cambiar contraseña">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                        <p class="datos-info">Cambiar contraseña</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/public/js/usuario_panel.js" type="text/javascript"></script>
+</body>
+</html>

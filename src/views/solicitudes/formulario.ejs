@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('../commons/header.ejs'); %>
+
+    <div class="contenedor-datos">
+        <div class="logos"><span class="material-symbols-outlined">question_mark</span></div>
+        <h2>Detalles del Solicitud</h2>
+        
+        <div class="info-grid">
+            <div class="colum1">
+                <label for="tipo_vehiculo">Tipo de Vehículo</label>
+                <input type="text" id="tipo_vehiculo" value="<%= solicitud.tipo %>" disabled>
+
+                <label for="patente">Patente</label>
+                <input type="text" id="patente" value="<%= solicitud.patente %>" disabled>
+
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" value="<%= solicitud.nombre_marca %>" disabled>
+
+                <label for="modelo">Modelo</label>
+                <input type="text" id="modelo" value="<%= solicitud.nombre_modelo %>" disabled>
+
+                <label for="anio">Año</label>
+                <input type="number" id="anio" value="<%= solicitud.anio %>" disabled>
+            </div>
+
+            <div class="colum2">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" value="<%= solicitud.nombre %>" disabled>
+
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" value="<%= solicitud.apellido %>" disabled>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" value="<%= solicitud.email %>" disabled>
+
+                <label for="celular">Celular</label>
+                <input type="text" id="celular" value="<%= solicitud.celular %>" disabled>
+            </div>
+        </div>
+
+        <button class="activo configBotones" onclick="window.location.href = '/solicitudes'">
+            <span class="material-symbols-outlined botones">arrow_back</span>Volver
+        </button>
+        <button id="enviarCotizacion" class="activo configBotones" onclick="enviarCotizacion()">
+            <span class="material-symbols-outlined botones">send</span>Enviar Cotización
+        </button>
+        <!-- <button id="archivar" class="activo configBotones" onclick="archivarSolicitud(this.dataset.id)">
+            <span class="material-symbols-outlined botones">archive</span>Archivar
+        </button>
+        <button id="eliminar" class="activo configBotones peligro">
+            <span class="material-symbols-outlined botones">delete</span>Eliminar
+        </button> -->
+    </div>
+
+    <!-- JS -->
+    <script src="/public/js/panel.js"></script>
+    <script src="/public/js/solicitudes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

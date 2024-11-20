@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('commons/header.ejs'); %>
+    
+    <div class="contenedor-datos-con-tabs">
+        <div class="tabs-con-acciones">
+            <div class="tabs">
+                <a href="/perfil_usuario/<%= usuario.id_cliente %>" id="datos-personales-tab" class="tabDesactivado">Datos personales</a>
+                <a href="javascript:void(0)" id="vehiculos-tab" class="tabActivo">Vehículos</a>
+            </div>
+            <div class="acciones">
+                <!-- <button id="editar-perfil" class="activo configBotones" onclick="accionBoton('editar')">
+                    <span class="material-symbols-outlined botones">edit</span>Editar perfil
+                </button>                 -->
+            
+                <!-- botones ocultos -->
+                <button id="agregar-vehiculo" class="oculto configBotones" onclick="abrirModal()">
+                    <span class="material-symbols-outlined botones">add_circle</span>Agregar vehículo
+                </button>
+                <!-- <button id="guardar" class="oculto configBotones" disabled onclick="guardarCambios()">
+                    <span class="material-symbols-outlined botones">check</span>Guardar
+                </button>
+                <button id="cancelar" class="oculto configBotones cancelar" onclick="accionBoton('cancelar')">
+                    <span class="material-symbols-outlined botones">close</span>Cancelar
+                </button>                 -->
+            </div>
+            
+        </div>
+
+        <div class="contenedor-datos">
+            <div class="vehiculos-asegurados">
+                <h2>Vehículos Asegurados de <strong><%= usuario.nombre %> <%= usuario.apellido %></strong></h2>
+                <% if (vehiculos.length > 0) { %> 
+                    <% vehiculos.forEach(function(vehiculo) { %>
+                        <div class="vehiculo">
+                            <div class="info-grid">
+                                <form class="form-vehiculo-datos" id="editarVehiculoForm" action="/ver_vehiculo/<%= usuario.id_cliente %>/editar_vehiculo" method="POST">
+                                    <div class="colum1">
+                                        <label>Fotos </label>
+                                        <!--<button onclick="verFotos('vehiculo1')" class="ver-fotos configBotones">
+                                            <span class="material-symbols-outlined botones">visibility</span>Ver
+                                        </button>-->
+                                        <a href="https://cdn.motor1.com/images/mgl/Mk3qz6/s1/renault-12-tl-de-1994-en-la-planta-de-santa-isabel-cordoba.-ph-renault-argentina..webp" target="_blank">
+                                        <button type="button" onclick="verFotos('vehiculo1')" class="ver-fotos configBotones">
+                                            <span class="material-symbols-outlined botones">visibility</span>Ver
+                                        </button>
+                                        </a>
+                                        <label for="tipo_vehiculo">Tipo de Vehículo </label>
+                                        <input class="input-vehiculo" id="tipo_vehiculo" value="<%= vehiculo.tipo_vehiculo %>" disabled>
+
+                                        <label for="patente">Patente </label>
+                                        <input class="input-vehiculo" type="text" id="patente" value="<%= vehiculo.patente %>" disabled>
+                                    
+                                        <label for="uso_vehiculo">Uso del Vehículo </label>
+                                        <input class="input-vehiculo" id="uso_vehiculo" value="<%= vehiculo.uso_vehiculo %>" disabled>
+
+                                        <label for="anio">Año </label>
+                                        <input class="input-vehiculo" type="number" id="anio" value="<%= vehiculo.modeloanio %>" disabled>
+                                        
+                                        <label for="vigencia_desde">Vigencia Desde </label>
+                                        <input class="input-vehiculo" type="datetime" id="vigencia_desde" value="<%= vehiculo.vigencia_desde %>" disabled>
+
+                                        <label for="vigencia_hasta">Vigencia Hasta </label>
+                                        <input class="input-vehiculo" type="datetime" id="vigencia_hasta" value="<%= vehiculo.vigencia_hasta %>" disabled>
+                                    </div>
+                                    <div class="colum2">
+                                        <label for="marca">Marca</label>
+                                        <input class="input-vehiculo" id="idMarca" name="idMarca" autocomplete="off" value="<%= vehiculo.marcas %>" disabled>
+                                                
+                                        <label for="modelo">Modelo</label>
+                                        <input class="input-vehiculo" id="idModelo" name="idModelo" autocomplete="off" value="<%= vehiculo.modelos %>" disabled>
+
+                                        <label for="tipo_seguro">Tipo de seguro </label>
+                                        <input class="input-vehiculo" id="tipo_seguro" value="<%= vehiculo.cobertura %>" disabled>
+
+                                        <label for="suma_asegurada">Suma asegurada </label>
+                                        <input class="input-vehiculo" type="number" id="suma_asegurada" value="<%= vehiculo.suma_asegurada %>" disabled>
+
+                                        <label for="prima">Prima total (en pesos) </label>
+                                        <input class="input-vehiculo" type="number" id="premio_total" value="<%= vehiculo.prima %>" disabled>
+
+                                        <label for="premio_total">Premio total anual (en pesos) </label>
+                                        <input class="input-vehiculo" type="number" id="premio_total" value="<%= vehiculo.premio %>" disabled>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No hay vehículos asegurados para este cliente.</p>
+                <% } %>
+            </div>
+        </div>
+
+         <!-- Modal para mostrar la imagen del vehículo -->
+    <!--<div id="modal-imagen" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="imagen-vehiculo" src="" alt="Imagen del vehículo">
+        </div>
+    </div>
+    <img src="/<%= imagenPath %>" alt="Imagen de perfil" style="width: 200px; height: 200px;">-->
+        <!-- Modal -->
+        <!-- <div id="modalAgregarVehiculo" class="modal oculto">
+        <div class="modal-contenedor">
+            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+            <div class="vehiculos-asegurados">
+                <div class="logos"><span class="material-symbols-outlined">directions_car</span></div>
+                <h2>Ingresar el vehículo asegurado</h2>
+        
+                <div id="vehiculos-container">
+                    <div class="vehiculo">
+                        <div class="info-grid">
+                            <div class="colum1">
+                                <label for="tipo_vehiculo">Tipo de vehículo </label>
+                                <small class="helper-text">&nbsp;</small>
+                                <select id="tipo_vehiculo">
+                                    <option value="" disabled selected>Seleccione el tipo de vehículo</option>
+                                    <option value="auto">Auto</option>
+                                    <option value="moto">Moto</option>
+                                </select>
+        
+                                <label for="patente">Patente </label>
+                                <small class="helper-text">Ingrese la patente del vehículo sin espacios ni guiones</small>
+                                <input type="text" id="patente">
+
+                                <label for="uso_vehiculo">Uso del vehículo </label>
+                                <small class="helper-text">Seleccione el uso principal del vehículo</small>
+                                <select id="uso_vehiculo">
+                                    <option value="" disabled selected>Selecciona un tipo de uso</option>
+                                    <option value="particular">Particular</option>
+                                    <option value="profesional">Profesional</option>
+                                </select>
+
+                                <label>Fotos del vehículo</label>
+                                <small class="helper-text">Subi fotos claras del vehículo asegurado</small>
+                                <input type="file" id="foto" accept="image/*">
+        
+                                <label for="vigencia_desde">Vigencia desde </label>
+                                <small class="helper-text">&nbsp;</small>
+                                <input type="date" id="vigencia_desde">
+        
+                                <label for="vigencia_hasta">Vigencia hasta </label>
+                                <small class="helper-text">&nbsp;</small>
+                                <input type="date" id="vigencia_hasta">
+                            </div>
+                            <div class="colum2">
+                                <label for="marca">Selecciona la marca</label>
+                                <small class="helper-text">&nbsp;</small>
+                                <select id="idMarca" name="idMarca" autocomplete="off" required>
+                                    <option value="" disabled selected>Selecciona la marca</option>
+                                </select>
+                                                    
+
+                                <label for="modelo">Selecciona el modelo</label>
+                                <small class="helper-text">&nbsp;</small>
+                                <select id="idModelo" name="idModelo" autocomplete="off" required>
+                                    <option value="" disabled selected>Selecciona el modelo</option>
+                                </select>
+
+                                <label for="anio_vehiculo">Año </label>
+                                <small class="helper-text">Seleccione el año de fabricación del vehículo</small>
+                                <select type="number" id="anio" name="anio" autocomplete="off" required>
+                                    <option value="" disabled selected>Selecciona el año</option>
+                                </select>
+
+                                <label for="tipo_seguro">Tipo de seguro </label>
+                                <small class="helper-text">&nbsp;</small>
+                                <select id="tipo_seguro">
+                                    <option value="" disabled selected>Selecciona un plan</option>
+                                </select>
+
+                                <label for="suma_asegurada">Suma asegurada </label>
+                                <small class="helper-text">Ingrese la suma asegurada para el vehículo</small>
+                                <input type="number" id="suma_asegurada">
+
+                                <label for="premio_total">Premio total trimestral (en pesos) </label>
+                                <small class="helper-text">Indique el premio total a pagar trimestralmente</small>
+                                <input type="number" id="premio_total">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="configBotones" onclick="guardarNuevoVehiculo()">Guardar vehículo</button>
+            </div>
+        </div>
+    </div> -->
+    </div>
+    
+    <script src="/public/js/panel.js"></script>
+    <script src="/public/js/perfil_usuario.js"></script>
+</body>
+</html>

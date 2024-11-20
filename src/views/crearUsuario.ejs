@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('commons/header.ejs'); %>
+
+    <div class="contenedor-datos">
+        <h2>Crear nuevo usuario</h2>
+        <div class="form-crear-usuario">
+            <table>
+                <tr>
+                    <td class="label-column"><label for="dni">DNI</label></td>
+                    <td class="input-column">
+                        <input type="text" id="dni" name="dni" placeholder="Ingresar DNI">
+                        <button type="button" id="buscar-usuario" class="activo configBotones">
+                            <span class="material-symbols-outlined botones">search</span>Buscar
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column"><label for="nombre">Nombre</label></td>
+                    <td class="input-column">
+                        <input type="text" id="nombre" name="nombre" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column"><label for="apellido">Apellido</label></td>
+                    <td class="input-column">
+                        <input type="text" id="apellido" name="apellido" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column"><label for="email">Email asociado</label></td>
+                    <td class="input-column">
+                        <input type="email" id="email" name="email" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column">
+                        <label for="clave">Generar contraseña</label>
+                    </td>
+                    <td class="input-column">
+                        <input type="password" id="clave" name="password" placeholder="Se generará una contraseña aleatoria">
+                        <button type="button" id="generar-password" class="activo configBotones">
+                            <span class="material-symbols-outlined botones">lock_reset</span>Generar
+                        </button>
+                        <div class="checkbox-contenedor">
+                            <input type="checkbox" id="toggle-password-checkbox">
+                            <label for="toggle-password-checkbox">Mostrar contraseña</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column"><label for="rol_id">Asignar rol</label></td>
+                    <td class="input-column">
+                        <select id="rol_id" name="rol_id">
+                            <option value="" disabled selected>Seleccionar rol</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Usuario</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <button type="button" id="crear-usuario" class="activo configBotones">
+                <span class="material-symbols-outlined botones">add_circle</span>Crear usuario
+            </button>
+        </div>
+    </div>    
+
+    <!-- JS -->
+    <script src="/public/js/panel.js"></script>
+    <script src="/public/js/crear_usuario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</body>
+</html>

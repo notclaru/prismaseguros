@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('commons/header.ejs'); %>
+
+    <div class="contenedor-datos">
+        <h2>Buscar cobertura</h2>
+        <div class="form-editar-cobertura">
+            <table>
+                <!-- Selección de tipo de vehículo -->
+                <tr>
+                    <td class="label-column"><label for="tipo-vehiculo">Tipo de Vehículo</label></td>
+                    <td class="input-column">
+                        <select id="tipo-vehiculo" name="tipo-vehiculo" required>
+                            <option value="" disabled selected>Selecciona tipo de vehículo</option>
+                            <option value="Auto">Auto</option>
+                            <option value="Moto">Moto</option>
+                        </select>
+                    </td>
+                </tr>
+                
+                <!-- Selección de marca -->
+                <tr>
+                    <td class="label-column"><label for="marca">Marca</label></td>
+                    <td class="input-column">
+                        <select id="marca" name="marca" required>
+                            <option value="" disabled selected>Selecciona la marca</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Selección de modelo basado en la marca -->
+                <tr>
+                    <td class="label-column"><label for="modelo">Modelo</label></td>
+                    <td class="input-column">
+                        <select id="modelo" name="modelo" required>
+                            <option value="" disabled selected>Selecciona el modelo</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Selección de año basado en el modelo -->
+                <tr>
+                    <td class="label-column"><label for="anio">Año</label></td>
+                    <td class="input-column">
+                        <select id="anio" name="anio" required>
+                            <option value="" disabled selected>Selecciona el año</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Suma asegurada -->
+                <tr>
+                    <td class="label-column"><label for="suma-asegurada">Suma Asegurada</label></td>
+                    <td class="input-column">
+                        <input type="text" id="suma-asegurada" placeholder="Suma asegurada" disabled />
+                    </td>
+                </tr>
+
+                <!-- Plan -->
+                <tr>
+                    <td class="label-column"><label for="tipo-plan">Tipo de Plan</label></td>
+                    <td class="input-column">
+                        <select id="tipo-plan" name="tipo-plan" required>
+                            <option value="" disabled selected>Selecciona tipo de plan</option>
+                            <option value="basico">Básico</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="premium">Premium</option>
+                            <option value="master">Master</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <!-- Prima -->
+                <tr>
+                    <td class="label-column"><label for="prima">Prima</label></td>
+                    <td class="input-column">
+                        <input type="text" id="prima" name="prima" placeholder="Prima" disabled>
+                    </td>
+                </tr>
+
+                <!-- Premio -->
+                <tr>
+                    <td class="label-column"><label for="premio">Premio</label></td>
+                    <td class="input-column">
+                        <input type="text" id="premio" name="premio" placeholder="Premio" disabled>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Botón  -->
+            <!-- <button type="button" id="buscar-cober" class="activo configBotones">
+                <span class="material-symbols-outlined botones">edit</span>Buscar
+            </button> -->
+            <button id="editar-suma" class="desactivado" style="display: none;"></button>
+        </div>
+    </div>     
+
+    <!-- JS -->
+    <script src="/public/js/panel.js"></script>
+    <script src="/public/js/editar_cobertura.js"></script>
+</body>
+</html>

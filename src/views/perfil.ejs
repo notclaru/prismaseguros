@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../views/commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('../views/commons/header.ejs'); %>
+    
+    <!-- datos personales del perfil -->
+    <div class="contenedor-datos-con-tabs">
+        <div class="tabs-con-acciones">
+            <div class="tabs">
+                <a href="javascript:void(0)" id="datos-personales-tab" class="tabActivo">Datos personales</a>
+                <a href="/ver_vehiculo/<%= usuario.id_cliente %>" id="vehiculos-tab" class="tabDesactivado">Vehículos</a>
+            </div>
+            <div class="acciones">
+                <button id="emitir-poliza" class="activo configBotones" onclick="window.location.href='/poliza'">
+                    <span class="material-symbols-outlined botones">download_for_offline</span>Emitir póliza
+                </button>
+                <button id="editar-perfil" class="activo configBotones" onclick="accionBoton('editar')">
+                    <span class="material-symbols-outlined botones">edit</span>Editar perfil
+                </button>                
+            
+                <!-- botones ocultos -->
+                <button id="guardar" class="oculto configBotones" disabled onclick="guardarCambios()">
+                    <span class="material-symbols-outlined botones">check</span>Guardar
+                </button>
+                <button id="cancelar" class="oculto configBotones cancelar" onclick="accionBoton('cancelar')">
+                    <span class="material-symbols-outlined botones">close</span>Cancelar
+                </button>                
+            </div>
+            
+        </div>
+        
+
+        <div class="contenedor-datos">
+            <form action="/perfil_usuario/:dni/editar" method="POST">
+                <div class="info-personal">
+                    <h2>Información Personal de <strong><%= usuario.nombre %> <%= usuario.apellido %></strong></h2>
+                    <div class="info-grid">
+                        <div class="colum1">
+                            <label for="nombre">Nombre </label>
+                            <input type="text" name="nombre" id="nombre" value=" <%= usuario.nombre %>" disabled>
+                            <label for="apellido">Apellido </label>
+                            <input type="text" name="apellido" id="apellido" value=" <%= usuario.apellido %>" disabled>
+                            <label for="dni">DNI </label>
+                            <input type="text" name="dni" id="dni" value=" <%= usuario.dni %>" disabled>
+                            <label for="email">Email </label>
+                            <input type="email" name="email" id="email" value="<%= usuario.email %>" disabled>
+                        </div>
+                        <div class="colum2">
+                            <label for="direccion">Dirección </label>
+                            <input type="text" name="direccion" id="direccion" value="<%= usuario.direccion %>" disabled>
+                            <label for="celular">Celular </label>
+                            <input type="text" name="celular" id="celular" value="<%= usuario.celular %>" disabled> 
+                            <label for="ciudad">Ciudad </label>
+                            <input type="text" name="ciudad" id="ciudad" value="<%= usuario.ciudad %>" disabled>
+                            <label for="provincia">Provincia </label>
+                            <input type="text" name="provincia" id="provincia" value="<%= usuario.provincia %>" disabled>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/public/js/panel.js"></script>
+    <script src="/public/js/perfil_usuario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

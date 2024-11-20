@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('commons/header.ejs'); %>
+
+    <div class="contenedor-datos">
+        <h2>Crear nueva cobertura</h2>
+        <div class="form-crear-vehiculo">
+            <table>
+                <tr>
+                    <td class="label-column"><label for="tipo-vehiculo">Tipo de vehículo</label></td>
+                    <td class="input-column">
+                        <select id="tipo-vehiculo" name="tipo-vehiculo" required>
+                            <option value="" disabled selected>Seleccionar tipo de vehículo</option>
+                            <option value="Auto">Auto</option>
+                            <option value="Moto">Moto</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column"><label for="marca">Marca</label></td>
+                    <td class="input-column">
+                        <input type="text" id="marca" name="marca" placeholder="Ingresar marca" required>
+                    </td>
+                    <td>
+                        <button id="buscar-marca" class="activo configBotones" title="Cargar">
+                        <span class="material-symbols-outlined botones">add_circle</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column"><label for="modelo">Modelo</label></td>
+                    <td class="input-column">
+                        <input type="text" id="modelo" name="modelo" placeholder="Ingresar modelo" required>
+                    </td>
+                    <td>
+                        <button id="buscar-modelo" class="activo configBotones" title="Cargar">
+                        <span class="material-symbols-outlined botones">add_circle</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column"><label for="anio">Año</label></td>
+                    <td class="input-column">
+                        <input type="text" id="anio" name="anio" placeholder="Ingresar año" required>
+                    </td>
+                    <td>
+                        <button id="buscar-anio" class="activo configBotones" title="Cargar">
+                        <span class="material-symbols-outlined botones">add_circle</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-column"><label for="suma-asegurada">Suma Asegurada</label></td>
+                    <td class="input-column">
+                        <input type="text" id="suma-asegurada" name="suma-asegurada" placeholder="Ingresar suma asegurada" required>
+                    </td>
+                    <td class="cargar-campo">
+                        <button id="insertar-suma" class="activo configBotones" title="Cargar">
+                        <span class="material-symbols-outlined botones">add_circle</span>
+                        </button>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td class="label-column"><label for="tipo-plan">Tipo de Plan</label></td>
+                    <td class="input-column">
+                        <select id="tipo-plan" name="tipo-plan" required>
+                            <option value="" disabled selected>Seleccionar tipo de plan</option>
+                            <option value="basico">Básico</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="premium">Premium</option>
+                            <option value="master">Master</option>
+                        </select>
+                    </td>
+                </tr> -->
+            </table>
+            <!--<button type="button" id="crear-cobertura" class="activo configBotones">
+                <span class="material-symbols-outlined botones">add_circle</span>Cargar cobertura
+            </button>-->
+            <button type="button" id="crear-cobertura" class="cargar-cobertura">Cargar cobertura</button>
+        </div>
+    </div>     
+
+    <!-- JS -->
+    <script src="/public/js/panel.js"></script>
+    <script src="/public/js/cargar_coberturas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

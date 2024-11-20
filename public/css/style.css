@@ -1,0 +1,657 @@
+/* CABECERA -------------------------------------------------------------------*/
+header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 14%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos del logo ------------------- */
+header .logo img{
+    width: 65%;
+    height: auto;
+}
+
+header .logo {
+    flex: 0 0 80%;
+    display: flex;
+    justify-content: center;
+}
+
+header .logo a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos del menu inactivo ---------- */
+header .menu {
+    display: none; 
+}
+
+header .icono-menu {
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 30px;
+    position: fixed; 
+    top: 38px; 
+    right: 20px; 
+    z-index: 1100;
+}
+
+.icono-menu i {
+    color: #2197a3; 
+}
+
+header .menu.activo {
+    display: block; 
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.oculto{
+    display: none;
+}
+
+.x-rojo {
+    color: red!important; 
+}
+
+/* Estilos del menú activo ------------ */
+header .menu.activo {
+    display: block;
+    position: fixed;
+    top: 0; 
+    right: 0; 
+    width: 70%; 
+    height: 100%; 
+    background-color: white; 
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+header .menu ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+    margin-top: 30px
+}
+
+header .menu li {
+    margin-bottom: 15px; 
+    border-bottom: 2px solid #2197a3;
+}
+
+header .menu a {
+    text-decoration: none; 
+    color: #333333; 
+    font-size: 20px; 
+    display: block; 
+    padding: 10px; 
+}
+
+header .menu a.importante {
+    font-weight: bold;
+    color: #2197a3;
+}
+
+header .menu a.inicio {
+    font-size: 20px; 
+    color: white;
+    background-color: #2197a3;
+    text-align: center;
+    border-radius: 5px;
+}
+
+header .menu li.inicio{
+    border-bottom: 0px;
+}
+
+/* CUERPO --------------------------------------------------------------------- */
+body{
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 35%;
+    font-family: "Urbanist", sans-serif;
+    overflow-x: hidden;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+    /* color: white; */
+}
+
+h3 {
+    display: none;
+}
+
+/* Estilos formulario ----------------- */
+.form {
+    display: flex;
+    margin: 45px;
+    text-align: center;
+    padding: 10px;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.form .form-boton-cotizar {
+    background-color: #2197a3;
+    border-radius: 30px;
+    padding: 12px;
+    width: 35%;
+    font-weight: bold;
+}
+
+.form .form-boton-cotizar a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+/* Estilo del carrusel ---------------- */
+.swiper-container {
+    height: auto; 
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+}
+
+.swiper-container .swiper-wrapper .swiper-slide {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease-in-out;
+}
+
+.swiper-container .swiper-wrapper .swiper-slide img {
+    width: 100%; 
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+/* Estilo coberturas ------------------ */
+.coberturas {
+    display: flex;
+    text-align: center;
+    padding: 13px;
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px;
+    max-width: 800px; 
+    margin: 45px auto;
+}
+
+.coberturas .tipo {
+    background-color: #2197a3;
+    border-radius: 20px;
+    padding: 15px 9px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* margin: 0 auto;  */
+    width: 100%;
+    margin-bottom: 13px;
+}
+
+.coberturas .tipo .icono{
+    color: white;   
+    font-size: 75px;
+}
+
+.coberturas .tipo h2{
+    font-size: 24px;
+    color: white !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo nosotros -------------------- */
+.nosotros {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+    color: #333;
+}
+
+.nosotros .contenedor {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.nosotros h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #2197a3;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.nosotros .introduccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.nosotros .titulo-principal {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.nosotros .descripcion-principal {
+    font-size: 1.1em;
+    margin: 10px 0 20px;
+    
+}
+
+.nosotros .boton-form {
+    display: inline-block;
+    background-color: #2197a3;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.nosotros .caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.nosotros .caracteristica {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nosotros .icono-info {
+    font-size: 48px;
+    color: #2197a3;
+    margin-bottom: 10px;
+}
+
+.nosotros .caracteristica h4 {
+    font-size: 1.3em;
+    color: #2197a3;
+    margin-bottom: 10px;
+}
+
+.nosotros .caracteristica p {
+    font-size: 1em;
+    color: #333;
+}
+
+/* FOOTER --------------------------------------------------------------------- */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    justify-content: center;
+}
+
+/* estilos titulos -------------------- */
+footer .contactos h4, footer .preguntas h4, footer .ubicacion h4{
+    color: #2197a3;
+    font-size: 26px;
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+/* estilo preguntas frecuentes -------- */
+footer .preguntas {
+    border-bottom: 3px solid #2197a3;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+}
+
+footer .preguntas .pregunta-frecuente {
+    flex-direction: column;
+    color: white;
+    margin-bottom: 10px;
+}
+
+footer .preguntas .pregunta {
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .preguntas .pregunta i {
+    margin-left: 10px; 
+    color: #2197a3;
+}
+
+footer .preguntas .respuesta {
+    display: none;
+    padding: 10px;
+    color: #2197a3;
+}
+
+footer .preguntas .pregunta-frecuente .respuesta .linkC{
+    text-decoration: none;
+    font-weight: bold;
+    color: #ebb970;
+}
+
+/* estilo ubicacion ------------------- */
+footer .ubicacion {
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+    border-bottom: 3px solid #2197a3;
+}
+
+footer .ubicacion p {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+footer .ubicacion a {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+footer .ubicacion a:hover {
+    text-decoration: underline;
+}
+
+.ubicacion iframe {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* estilo contactos ------------------- */
+footer .contactos {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    border-bottom: 3px solid #2197a3;
+    margin: 15px;
+}
+
+footer .contactos .iconos {
+    display: flex;
+    flex-direction: row; 
+    margin-bottom: 30px;
+}
+
+footer .contactos i {
+    color: white;
+    font-size: 30px;
+    margin: 10px;
+}
+
+/* estilo copiright ------------------- */
+footer .copiright {
+    margin: 15px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+footer .copiright .texto-copi {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+footer .copiright .img-copi img{
+    width: 20%;
+    height: auto;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 1024px) {
+    /* CABECERA -------------------------------------------------------------------*/
+    header {
+        height: 80px; 
+        /* padding: 0 20px;  */
+        display: flex; 
+        align-items: center;
+    }
+
+    header .logo {
+        flex: 0 0 15%; 
+        max-width: 150px; 
+    }
+
+    header .logo img {
+        width: 100%;
+        height: auto; 
+        padding-left: 35px;
+    }
+
+    header .icono-menu {
+        display: none; 
+    }
+
+    header .menu {
+        display: flex; 
+        flex: 1; 
+        justify-content: flex-end; 
+        gap: 30px; 
+    }
+
+    header .menu ul {
+        display: flex; 
+        padding: 0;
+        margin: 0; 
+        list-style: none; 
+        gap: 30px; 
+    }
+
+    header .menu li {
+        margin-bottom: 0; 
+        border-bottom: none; 
+        /* margin: 0 5px;  */
+    }
+
+    header .menu a {
+        font-size: 17px;
+    }
+
+    header .menu a.inicio {
+        margin-left: 25px;
+        font-size: 18px;
+        margin-right: 20px;
+    }
+
+    /* CUERPO --------------------------------------------------------------------- */
+    body {
+        margin-top: 80px; 
+        font-size: 18px; 
+    }
+
+    h3 {
+        display: block;
+        font-size: 1.12em;
+        background-color: #dbeef0;
+        color: #333;
+    }
+
+    /* Estilos formulario ----------------- */
+    .form {
+        width: 60%; 
+        margin: 50px auto; 
+    }
+
+    .form .form-boton-cotizar {
+        width: 20%;
+        border-radius: 50px;
+    }
+
+    /* Estilo del carrusel ---------------- */
+    .swiper-container {
+        max-width: 1000px; 
+        margin: 20px auto; 
+    }
+    
+    .swiper-container .swiper-wrapper {
+        display: flex; 
+    }
+    
+    .swiper-container .swiper-wrapper .swiper-slide {
+        flex: 0 0 33.33%; 
+        box-sizing: border-box; 
+        padding: 10px; 
+    }
+    
+    .swiper-container .swiper-wrapper .swiper-slide img {
+        width: 100%; 
+        height: auto; 
+    }
+
+    /* Estilo coberturas ------------------ */
+    .coberturas {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: flex-start;
+    }
+    
+    .coberturas .cobertura-titulo {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .coberturas .tipo {
+        display: flex;
+        width: 100%; 
+        margin: 10px; 
+        flex-direction: column; 
+        padding: 60px 70px;
+    }
+    
+    .coberturas-filas {
+        display: flex; 
+        justify-content: center; 
+        margin: 0 auto;
+    }
+    
+    .custom-actions {
+        display: flex;
+        justify-content: space-between; 
+        gap: 15px;
+        flex-wrap: nowrap; 
+        width: 100%;
+        padding: 10px 0; 
+    }
+    
+    .custom-actions .swal2-confirm,
+    .custom-actions .swal2-deny,
+    .custom-actions .swal2-cancel,
+    .custom-actions #masterPlan {
+        flex-grow: 1;
+        min-width: 120px;
+        max-width: 160px;
+        padding: 10px 15px; 
+        margin: 0; 
+        text-align: center;
+    }
+    
+    .swal2-html-container {
+        font-size: inherit !important; 
+    }
+    
+    .swal2-close:focus {
+        outline: none; 
+        box-shadow: none; 
+    }
+    
+    /* Estilo nosotros -------------------- */
+    .nosotros .caracteristicas {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .nosotros .titulo-principal {
+        font-size: 2.2em;
+    }
+
+    .nosotros .descripcion-principal {
+        font-size: 1.3em;
+    }
+
+    /* Estilo footer ---------------------- */
+    footer {
+        flex-direction: column;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+
+    footer .contactos,
+    footer .preguntas,
+    footer .ubicacion {
+        width: 100%;
+        margin: 10px; 
+    }
+
+    footer .preguntas .pregunta-frecuente {
+        cursor: pointer;
+    }
+
+    footer .preguntas .pregunta {
+        margin-right: 20px;
+    }
+
+    footer .ubicacion {
+        width: 100%; 
+        text-align: center;
+    }
+
+    footer .ubicacion iframe {
+        width: 90%; 
+        height: auto;
+        margin: 0 auto; 
+    }
+
+    footer .contactos i {
+        transition: transform 0.3s; 
+        cursor: pointer;
+    }
+
+    footer .contactos i:hover {
+        transform: scale(1.3); 
+    }
+
+    footer .copiright .img-copi img{
+        width: 5%;
+    }
+
+    footer .copiright .texto-copi {
+        font-size: 15px;
+        margin-bottom: 0;
+        margin-right:28px;
+    }
+}

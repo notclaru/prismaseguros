@@ -1,0 +1,160 @@
+body {
+    background-color: #f7f7f7 !important;
+}
+
+/* Estilos del título */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    margin: 45px;
+}
+
+/* Estilos del form */
+form {
+    max-width: 400px;
+    margin: 25px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 21px;
+}
+
+.textoTYC {
+    font-size: 19px;
+    display: inline-block;
+}
+
+input, select {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 25px; 
+    border-radius: 5px;
+    border: 1.5px solid #ccc;
+    box-sizing: border-box;
+    font-size: 21px;
+    background-color: #f0f8fc;
+    color: #333;
+}
+
+input[type="checkbox"] {
+    width: 20px;  
+    height: auto; 
+    margin-right: 10px; 
+    accent-color: #2197a3; 
+}
+
+input::placeholder{
+    color: gray;
+    font-style: italic;
+    font-size: 18px;
+}
+
+select:hover, select:focus, input:focus {
+    border-color: #2197a3; 
+    outline: none; 
+}
+
+small.form-text {
+    display: block;
+    margin-bottom: 10px;
+    color: #777;
+    font-size: 15px;
+}
+
+/* Estilos del botón */
+button.activo {
+    width: 50%;
+    padding: 10px;
+    background-color: #2197a3;
+    color: white;
+    border: none;
+    border-radius: 50px; 
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px auto; 
+    display: block; 
+}
+
+
+button.activo:hover {
+    background-color: #1b7d88;
+}
+
+button.desactivado {
+    width: 50%;
+    padding: 10px;
+    background-color: #6b6b6b;
+    color: white;
+    border: none;
+    border-radius: 50px; 
+    cursor:auto;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px auto; 
+    display: block; 
+}
+
+/* Estilos para los menu desplegables */
+.form-tipos {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-tipos label {
+    margin-bottom: 8px; 
+}
+
+.swal2-confirm.btn-confirm {
+    background-color: #2197a3; 
+    color: white; 
+    font-size: 20px; 
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 1024px) {
+    h2.tituloP {
+        font-size: 2.5em; 
+        margin: 120px 60px auto !important; 
+    }
+    
+    h2{
+        margin: 10px 60px auto !important; 
+    }
+
+    form {
+        max-width: 600px; 
+        margin: 40px auto; 
+        padding: 30px; 
+    }
+
+    label {
+        font-size: 24px; 
+    }
+
+    input,
+    select {
+        font-size: 24px; 
+        padding: 12px; 
+    }
+
+    small.form-text {
+        font-size: 16px; 
+    }
+
+    button {
+        font-size: 22px;
+        padding: 12px; 
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('commons/head_usuario.ejs'); %>
+<body>
+    <%- include('commons/header_usuario.ejs'); %>
+    <div class="fondo">
+        <div class="contenedor">
+            <div class="saludo-usuario">
+                <p>¡Estos son tus datos personales <b id="nombre"><%= usuario.nombre %></b>!</p>
+            </div>
+            <!-- usuario_datospersonales.ejs -->
+            <section class="datos-personales">
+                <h3 id="titulo-datos-personales">Datos Personales</h3>
+                <form class="datos-cuerpo" action="/perfil_usuario/editar" method="POST">
+                    <div class="datos1">
+                        <!-- oculto -->
+                        <input type="hidden" id="idUsuario" value="<%= usuario.id_cliente %>">
+
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="dato1" id="nombre" value="<%= usuario.nombre %>" disabled>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="dato1" id="apellido" value="<%= usuario.apellido %>" disabled>
+                        <label for="dni">DNI</label>
+                        <input type="number" class="dato1" id="dni" value="<%= usuario.dni %>" disabled>
+                        <label for="email">Email</label>
+                        <input type="email" class="dato1" id="email" value="<%= usuario.email %>" disabled>
+                    </div>
+                    <div class="datos2">
+                        <label for="celular">Celular</label>
+                        <input type="tel" class="dato" id="celular" value="<%= usuario.celular %>" disabled>
+                        <label for="direccion">Dirección</label>
+                        <input type="text" class="dato1" id="direccion" value="<%= usuario.direccion %>" disabled>
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" class="dato1" id="ciudad" value="<%= usuario.ciudad %>" disabled>
+                        <label for="provincia">Provincia</label>
+                        <input type="text" class="dato1" id="provincia" value="<%= usuario.provincia %>" disabled>
+                    </div>
+                </form>
+                <div class="body-buttons">
+                    <div class="input-editar">
+                        <input class="editar" value="Editar celular" type="button">
+                        <input class="guardar" value="Guardar" type="button">
+                        <input class="cancelar" value="Cancelar" type="button">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <script src="/public/js/usuario_datospersonales.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

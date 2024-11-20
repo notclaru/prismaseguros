@@ -1,0 +1,237 @@
+<!-- pág. principal -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Compañia de Seguros ...">
+
+    <!-- FAVICON  -->
+    <link rel="icon" href="/public/img/logo.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css">
+    <!-- CSS icons google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS de la librería Swiper (carrusel) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+
+    <!-- JS de la libreria Swiper (carrusel) -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fuente del body -->
+    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- ICONOS flaticon -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+
+    <title>Prisma Seguros</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="/public/img/logo_grande_transparente.png" alt="logo">
+            </a>
+        </div>
+
+        <div class="icono-menu" id="icono-menu">
+            <i class="fi fi-rr-menu-burger"></i>
+            <i class="fi fi-br-cross oculto"></i>
+        </div> 
+
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="/solicitante_form" class="importante">COTIZACIÓN ONLINE</a></li>
+                <li><a href="#titulo-2">Coberturas</a></li>
+                <li><a href="#titulo-3">Nosotros</a></li>
+                <li><a href="#titulo-4">Preguntas frecuentes</a></li>
+                <li><a href="#titulo-5">Contactos</a></li>
+                <li class="inicio"><a href="/login" class="inicio">Iniciar sesión</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <div class="form">
+        <div class="form-titulo">
+            <h2>¿Necesitas un seguro para tu vehículo?</h2>
+            <h3>¡No esperes más! cotiza tu seguro ahora de forma online</h3>
+        </div>
+        <div class="form-boton-cotizar">
+            <a href="/solicitante_form">COTIZA YA</a>
+        </div>
+    </div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/public/img/promo1.png" alt="Promoción"></div>
+            <div class="swiper-slide"><img src="/public/img/promo2.png" alt="Promoción"></div>
+            <div class="swiper-slide"><img src="/public/img/poliza (1).png" alt="Promoción"></div>
+            <div class="swiper-slide"><img src="/public/img/poliza (2).png" alt="Promoción"></div>
+            <div class="swiper-slide"><img src="/public/img/poliza (3).png" alt="Promoción"></div>
+            <div class="swiper-slide"><img src="/public/img/publicidad.png" alt="Promoción"></div>
+            <div class="swiper-slide"><img src="/public/img/publicidad1.png" alt="Promoción"></div>
+            <div class="swiper-slide"><img src="/public/img/publicidad3.png" alt="Promoción"></div>
+        </div>
+    </div>
+        
+    <div class="coberturas" id="titulo-2">
+        <div class="cobertura-titulo">
+            <h2>¡Elegí tu seguro con Prisma!</h2>
+        </div>
+        <div class="coberturas-filas">
+            <div class="tipo" id="moto">
+                <div class="icono">
+                    <i class="fi fi-tr-moped"></i>
+                </div>
+                <h2>Moto</h2>
+            </div>
+            <div class="tipo" id="auto">
+                <div class="icono">
+                    <i class="fi fi-tr-car-alt"></i>
+                </div>
+                <h2>Auto</h2>
+            </div>
+        </div>
+    </div>
+
+    <section class="nosotros" id="titulo-3" >
+        <div class="contenedor">
+            <h2>Quienes somos</h2>
+            <div class="introduccion">
+                <h3 class="titulo-principal">En Prisma Seguros, no solo aseguramos vehículos, aseguramos tranquilidad.</h3>
+                <p class="descripcion-principal">Somos una empresa apasionada por la protección, con el compromiso de ofrecer seguros que se ajusten a cada ruta y a cada estilo de vida.</p>
+                <a href="/solicitante_form" class="boton-form">¡Conoce más sobre nuestros planes y empieza a viajar con confianza hoy mismo!</a>
+            </div>
+            <div class="caracteristicas">
+                <div class="caracteristica">
+                    <span class="material-icons icono-info">lightbulb</span>
+                    <h4>Nuestra Filosofía</h4>
+                    <p><strong>"Viajar seguro es viajar feliz"</strong></p>
+                    <p>que cada viaje es una aventura, y que cada aventura merece la mejor protección. Es por eso que, en Prisma Seguros, cada póliza está diseñada para brindar no solo cobertura, sino también confianza y tranquilidad.</p>
+                </div>
+                <div class="caracteristica">
+                    <span class="material-icons icono-info">group</span>
+                    <h4>Nuestro Equipo</h4>
+                    <p> <strong>¡Somos un equipo de apasionados de la seguridad y la tecnología! </strong></p>
+                    <p> miembro de nuestro equipo comparte una visión común: proteger lo que más valoras con la máxima dedicación. Con años de experiencia en el sector y una constante búsqueda de la excelencia, nuestro equipo está siempre listo para asistirte.</p>
+                </div>
+                <div class="caracteristica">
+                    <span class="material-icons icono-info">rocket</span>
+                    <h4>Innovación</h4>
+                    <p><strong> tecnología está en nuestro ADN </strong></p>
+                    <p>Nos enorgullece estar a la vanguardia, utilizando las últimas tecnologías para ofrecerte seguros más personalizados y eficientes. Con herramientas digitales intuitivas, te brindamos acceso rápido y sencillo a tu información, cotizaciones en tiempo real y un soporte continuo.</p>
+                </div>
+                <div class="caracteristica">
+                    <span class="material-icons icono-info">task_alt</span>
+                    <h4>¿Por Qué Elegirnos?</h4>
+                    <p><strong>Cobertura integral:</strong> protegemos cada aspecto de tu vehículo con planes diseñados a medida.</p>
+                    <p><strong>Asistencia 24/7:</strong> servicio de asistencia en ruta disponible en todo momento.</p>
+                    <p><strong>Transparencia y confianza:</strong>  nuestro compromiso es brindarte seguridad y claridad en cada paso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer >
+        <div class="preguntas" id="titulo-4">
+            <h4>Preguntas frecuentes</h4>
+            <div class="pregunta-frecuente">
+                <div class="pregunta">¿Qué tipos de seguros ofrecen?
+                    <i class="fi fi-rr-angle-small-down"></i>
+                </div>
+                <div class="respuesta">Ofrecemos seguros para autos y motos, podrás elegir entre 3 planes disponibles: estándar, intermedio y premiun. </div>
+            </div>
+
+            <div class="pregunta-frecuente">
+                <div class="pregunta">¿Cómo puedo obtener una cotización para un seguro?
+                    <i class="fi fi-rr-angle-small-down"></i>
+                </div>
+                <div class="respuesta">¡Es muy sencillo! Sólo tenés que hacer click <a href="/solicitante_form" class="linkC">acá</a></div>
+            </div>
+
+            <div class="pregunta-frecuente">
+                <div class="pregunta">¿Qué hacer si necesito asistencia en carretera o en emergencias?
+                    <i class="fi fi-rr-angle-small-down"></i>
+                </div>
+                <div class="respuesta">Podes contactarnos en nuestra línea telefónica 24/7</div>
+            </div>
+
+            <div class="pregunta-frecuente">
+                <div class="pregunta">¿Cómo puedo contactar al servicio al cliente?
+                    <i class="fi fi-rr-angle-small-down"></i>
+                </div>
+                <div class="respuesta">Podes contactarnos en nuestra línea telefónica 24/7 o desde tu cuenta de Prisma Seguros</div>
+            </div>
+
+            <div class="pregunta-frecuente">
+                <div class="pregunta">¿Dónde se encuentran las oficinas de la aseguradora?
+                    <i class="fi fi-rr-angle-small-down"></i>
+                </div>
+                <div class="respuesta">Nuestras oficinas se encuentran en Av. Calixto Calderón 424, Chivilcoy, Buenos Aires, Argentina.</div>
+            </div>
+        </div>
+
+        <div class="ubicacion" >
+            <h4>¿Dónde estamos?</h4>
+            <div>
+                <p>
+                    Estamos ubicados en Av. Calixto Calderón 424, Chivilcoy, Buenos Aires, Argentina.
+                </p>
+                <a href="https://www.google.com/maps?q=Av.+Calixto+Calderon+424" target="_blank">
+                    Ver ubicación en Google Maps
+                </a>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.8868352851337!2d-60.037367222795744!3d-34.909289313672005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bebad1ec1085b7%3A0x9506a5a7861386c2!2sAv.%20C.%20Calder%C3%B3n%20424%2C%20Chivilcoy%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1725477621545!5m2!1ses-419!2sar" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>        
+
+        <div class="contactos" id="titulo-5">
+            <h4>¡Seguinos!</h4>
+            <div class="iconos">
+                <i class="fi fi-brands-instagram"></i>
+                <i class="fi fi-brands-whatsapp"></i>
+                <i class="fi fi-brands-facebook"></i>
+            </div>
+        </div>
+
+        <div class="copiright">
+            <div class="texto-copi">
+                <p>
+                    Copiright 2024. Todos los derechos reservados | Prisma S.A., CUIT 30-12123123-7, Av. Calixto Calderon 424, Chivilcoy, Buenos Aires.
+                    Las fotos son a modo ilustrativo. La venta de cualquiera de los servicios publicados está sujeta a la verificación de los términos y condiciones.
+                </p>
+            </div>
+            <div class="img-copi">
+                <img src="/public/img/footer_fiscal.jpeg" alt="">
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="/public/js/scripts.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON  -->
+    <link rel="icon" href="/public/img/logo.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/public/css/form.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css">
+    
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fuente del body -->
+    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- ICONOS -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+    <title>Formulario de contacto</title>
+</head>
+<body>
+    <header>
+        <!-- Logo ------------------------------------- -->
+        <div class="logo">
+            <a href="/">
+                <img src="/public/img/logo_grande_transparente.png" alt="logo">
+            </a>
+        </div>
+
+        <!-- Menú hamburguesa ------------------------- -->
+        <div class="icono-menu" id="icono-menu">
+            <i class="fi fi-rr-menu-burger"></i>
+            <i class="fi fi-br-cross oculto"></i>
+        </div> 
+
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="/solicitante_form" class="importante">COTIZACIÓN ONLINE</a></li>
+                <li><a href="/">Coberturas</a></li>
+                <li><a href="/">Nosotros</a></li>
+                <li><a href="/">Preguntas Frecuentes</a></li>
+                <li><a href="/">Contactos</a></li>
+                <li class="inicio"><a href="/login" class="inicio">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <h2 class="tituloP">¿Qué seguro vamos a cotizar hoy?</h2>
+
+    <form id="formCotizacion" action="/guardar-datos" method="post">
+        <div class="form-tipos">
+            <label for="tipo">Tipo de Vehículo</label>
+            <select name="tipo" id="tipo">
+                <option value="" disabled selected>Selecciona un tipo de vehículo</option>
+                <option value="Auto">Auto</option>
+                <option value="Moto">Moto</option>
+            </select>
+        </div>
+
+        <label for="apellido">Ingresá la patente</label>
+        <small class="form-text">Sin espacios ni guiones</small>
+        <input type="text" placeholder="123AAA" id="patente" name="patente" required>
+        
+        <label for="marca">Selecciona la marca</label>
+        <select id="idMarca" name="idMarca" required>
+            <option value="" disabled selected>Selecciona una marca</option>
+        </select>
+                    
+        <label for="modelo">Selecciona el modelo</label>
+        <select id="idModelo" name="idModelo"  autocomplete="off" required>
+            <option value="" disabled selected>Selecciona un modelo</option>
+        </select>
+
+        <label for="anio">Ingresá el año</label>
+        <select id="anio" name="anio"  autocomplete="off" required>
+            <option value="" disabled selected>Selecciona el año de fabricación</option>
+        </select>
+                          
+        <label for="nombre">Ingresá tu nombre</label>
+        <input type="text" placeholder="Anita" id="nombre" name="nombre" required>
+        
+        <label for="apellido">Ingresá tu apellido</label>
+        <input type="text" placeholder="Luz" id="apellido" name="apellido" required>
+        
+        <label for="celular">Ingresá tu celular</label>
+        <small class="form-text">Código de área sin 0 + número sin el 15</small>
+        <input type="tel" placeholder="2346203040" id="celular" name="celular" required>
+        
+        <label for="email">Ingresá tu correo </label>
+        <input type="email" placeholder="anita@gmail.com" id="email" name="email" required>
+
+        <!-- Checkbox de aceptación -->
+        <label>
+            <input type="checkbox" id="aceptar-terminos">
+            <p class="textoTYC">
+                Acepto los <span id="terminos-link" style="color: #2197a3; cursor: pointer;">términos y condiciones</span>.
+            </p>
+        </label>
+        
+        <button id="botonCotizar" class="desactivado" type="submit">COTIZAR</button>
+    </form>
+    
+    <!-- JS -->
+    <script src="/public/js/form.js" type="text/javascript"></script>
+    <script src="/public/js/scripts.js" type="text/javascript"></script>
+    <!-- Librería Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

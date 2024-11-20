@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('commons/head_usuario.ejs'); %>
+<body>
+    <%- include('commons/header_usuario.ejs'); %>
+    <div class="fondo">
+        <div class="contenedor">
+            <div class="saludo-usuario">
+                <p>¡Cambiá tu contraseña!</p>
+            </div>
+            <section class="tarjeta-contenedor">
+                <h3 id="titulo-tarjeta">Cambiar contraseña</h3>
+                <form action="/usuario/cambiar-contrasena" method="POST">    
+                    <label for="claveActual">Contraseña actual</label>
+                    <input type="password" id="claveActual" name="claveActual" required>
+
+                    <div class="checkbox-contenedor">
+                        <input type="checkbox" id="toggle-password-checkbox">
+                        <label for="toggle-password-checkbox">Mostrar contraseña</label>
+                    </div>
+                    
+                    <div class="form-recu">
+                        <a href="/recover" id="recuperar-clave" class="link-tarjeta ocultar">¿Olvidaste tu contraseña? Recupérala acá</a>
+                    </div>
+
+                    <label for="nuevaClave">Nueva contraseña</label>
+                    <input type="password" id="nuevaClave" name="nuevaClave" required>
+
+                    <label for="confirmarClave">Confirmar nueva contraseña</label>
+                    <input type="password" id="confirmarClave" name="confirmarClave" required>
+
+                    <button class="boton-accion" type="submit">Cambiar contraseña</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script src="/public/js/usuario_panel.js" type="text/javascript"></script>
+    <script src="/public/js/usuario_cambiarcontra.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

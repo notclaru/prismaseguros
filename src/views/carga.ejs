@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('commons/header.ejs'); %>
+
+    <div class="contenedor-datos">
+        <!-- Sección de información personal -->
+        <div class="info-personal">
+            <div class="logos"><span class="material-symbols-outlined">person</span></div>
+            <h2>Ingresar Información Personal</h2>
+            <div class="info-grid">
+                <div class="colum1">
+                    <label for="nombre">Nombre </label>
+                    <small class="helper-text">Ingrese el/los nombres</small>
+                    <input type="text" id="nombre">
+    
+                    <label for="apellido">Apellido </label>
+                    <small class="helper-text">Ingresar el/los apellidos</small>
+                    <input type="text" id="apellido">
+    
+                    <label for="dni">DNI </label>
+                    <small class="helper-text">Ingrese solo números, sin puntos ni guiones</small>
+                    <input type="number" id="dni">
+    
+                    <label for="email">Email </label>
+                    <small class="helper-text">Ingrese un correo electrónico válido</small>
+                    <input type="email" id="email">
+                </div>
+                <div class="colum2">
+                    <label for="direccion">Dirección </label>
+                    <small class="helper-text">Ingrese la dirección completa, incluyendo calle y número</small>
+                    <input type="text" id="direccion">
+    
+                    <label for="celular">Celular </label>
+                    <small class="helper-text">Ingrese número de celular con código de área sin el 0 ni el 15</small>
+                    <input type="text" id="celular">
+    
+                    <label for="ciudad">Ciudad </label>
+                    <small class="helper-text">Ingrese la ciudad donde reside</small>
+                    <input type="text" id="ciudad">
+    
+                    <label for="provincia">Provincia </label>
+                    <small class="helper-text">Ingrese la provincia donde reside</small>
+                    <input type="text" id="provincia">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Sección de vehículo a asegurar -->
+        <div class="vehiculos-asegurados">
+            <div class="logos"><span class="material-symbols-outlined">directions_car</span></div>
+            <h2>Ingresar el vehículo asegurado</h2>
+    
+            <div id="vehiculos-container">
+                <div class="vehiculo">
+                    <div class="info-grid">
+                        <div class="colum1">
+                            <label for="tipo-vehiculo">Tipo de vehículo </label>
+                            <small class="helper-text">&nbsp;</small>
+                            <select id="tipo-vehiculo">
+                                <option value="" disabled selected>Seleccione el tipo de vehículo</option>
+                                <option value="auto">Auto</option>
+                                <option value="moto">Moto</option>
+                            </select>
+    
+                            <label for="patente">Patente </label>
+                            <small class="helper-text">Ingrese la patente del vehículo sin espacios ni guiones</small>
+                            <input type="text" id="patente">
+
+                            <label for="uso_vehiculo">Uso del vehículo </label>
+                            <small class="helper-text">Seleccione el uso principal del vehículo</small>
+                            <select id="uso_vehiculo">
+                                <option value="" disabled selected>Selecciona un tipo de uso</option>
+                                <option value="particular">Particular</option>
+                                <option value="profesional">Profesional</option>
+                            </select>
+
+                            <label>Fotos del vehículo</label>
+                            <small class="helper-text">Subi fotos claras del vehículo asegurado</small>
+                            <input type="file" id="foto" accept="image/*" >
+    
+                            <label for="vigencia_desde">Vigencia desde </label>
+                            <small class="helper-text">&nbsp;</small>
+                            <input type="date" id="vigencia_desde">
+    
+                            <label for="vigencia_hasta">Vigencia hasta </label>
+                            <small class="helper-text">&nbsp;</small>
+                            <input type="date" id="vigencia_hasta">
+
+                            <label for="premio_mensual">Premio en cuotas</label>
+                            <small class="helper-text">El cliente abonará esta cantidad cada mes durante tres meses</small>
+                            <input type="number" id="premio_mensual" disabled>
+                        </div>
+                        <div class="colum2">
+                            <label for="marca">Selecciona la marca</label>
+                            <small class="helper-text">&nbsp;</small>
+                            <select id="marca" name="marca" autocomplete="off" required>
+                                <option value="" disabled selected>Selecciona la marca</option>
+                            </select>
+                                        
+                            <label for="modelo">Selecciona el modelo</label>
+                            <small class="helper-text">&nbsp;</small>
+                            <select id="modelo" name="modelo"  autocomplete="off" required>
+                                <option value="" disabled selected>Selecciona el modelo</option>
+                            </select>
+
+                            <label for="anio_vehiculo">Año </label>
+                            <small class="helper-text">Seleccione el año de fabricación del vehículo</small>
+                            <select type="number" id="anio" name="anio" autocomplete="off" required>
+                                <option value="" disabled selected>Selecciona el año</option>
+                            </select>
+
+                            <label for="suma_asegurada">Suma Asegurada en pesos </label>
+                            <small class="helper-text">&nbsp;</small>
+                            <input type="hidden" id="id_suma" value="">
+                            <input type="number" id="suma_asegurada" disabled>
+
+                            <label for="tipo_seguro">Tipo de seguro </label>
+                            <small class="helper-text">&nbsp;</small>
+                            <select id="tipo_seguro">
+                                <option value="" disabled selected>Selecciona el tipo de plan</option>
+                                <option value="Básico">Básico</option>
+                                <option value="Intermedio">Intermedio</option>
+                                <option value="Premiun">Premium</option>
+                                <option value="Master">Master</option>
+                            </select>
+
+                            <label for="prima">Prima en pesos</label>
+                            <small class="helper-text">&nbsp;</small>
+                            <input type="number" id="prima" disabled>
+    
+                            <label for="premio_total">Premio total en pesos </label>
+                            <small class="helper-text">Cobertura anual (monto total a pagar)</small>
+                            <input type="number" id="premio_total" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <button id="guardarCambios" class="activo configBotones">
+                <span class="material-symbols-outlined botones">check_small</span>Guardar
+            </button>
+            <button class="activo cancelar configBotones" onclick="cancelarCambios()">
+                <span class="material-symbols-outlined botones">close</span>Cancelar
+            </button>
+        </div>
+        </div>
+    </div>
+
+   <!-- JS -->
+    <!--<script src="/public/js/panel.js"></script>-->
+    <script src="/public/js/cargar_usuario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+</body>
+</html>

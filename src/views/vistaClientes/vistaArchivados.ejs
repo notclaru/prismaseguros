@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../commons/head.ejs'); %>
+</head>
+<body>
+    <%- include('../commons/header.ejs'); %>
+
+    <div class="contenedor-datos">
+        <!-- Contenedor para los filtros -->
+        <div class="filtros">
+            <div class="ordenar-menu">
+                <button class="ordenar configBotones"><span class="material-symbols-outlined botones">swap_vert</span>Ordenar por</button>
+                <div class="ordenar-menu-oculto">
+                    <a href="#" data-sort="a-z">A - Z</a>
+                    <a href="#" data-sort="z-a">Z - A</a>
+                </div>
+            </div>
+            <div class="filtrar-menu">
+                <button class="filtrar configBotones"><span class="material-symbols-outlined botones">sort</span>Filtrar</button>
+                <div class="filtrar-menu-oculto">
+                    <a href="#" data-filter="auto">Auto</a>
+                    <a href="#" data-filter="moto">Moto</a>
+                </div>
+            </div>
+            <a id="archivar-link" class="configBotones" title="Ver clientes activos" href="/vistaClientes">
+                <span class="material-symbols-outlined opcionesHead">person</span>
+            </a>
+            <div class="buscador">
+                <input type="text" placeholder="Buscar cliente...">
+                <div class="icono-busc">
+                    <i class="fi fi-rc-search"></i>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2>Clientes dados de baja</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="thBaja">ID</th>
+                        <th class="thBaja">Nombre</th>
+                        <th class="thBaja">Vehículos</th>
+                        <th class="thBaja">Email</th>
+                        <th class="thBaja">Celular</th>
+                        <th class="thBaja">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody class="tbodyBaja">
+                    <% if (clientesArchivados.length > 0) { %>
+                        <% clientesArchivados.forEach(function(user) { %>
+                            <tr class="trBaja" data-vehiculo="<%= user.tipo_vehiculo %>">
+                                <td><%= user.id_cliente %></td>
+                                <td><%= user.nombre %></td>
+                                <td><%= user.tipo_vehiculo %></td>
+                                <td><%= user.email %></td>
+                                <td><%= user.celular %></td>
+                                <td>
+                                    <a class="configBotones" href="/perfil_usuario/<%= user.id_cliente %>"><span class="material-symbols-outlined opciones" title="Ver">visibility</span></a>
+                                    <a class="configBotones" href="/vistaClientes/<%= user.id_cliente %>/desarchivar" data-id="<%= user.id_cliente %>" onclick="event.preventDefault(); desarchivarCliente(this.dataset.id);"><span class="material-symbols-outlined opciones" title="Dar de alta">refresh</span></a>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    <% } else { %>
+                        <tr>    
+                            <td colspan="6">No hay clientes disponibles</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <script src="/public/js/panel.js"></script>
+    <script src="/public/js/perfil_usuario.js"></script>
+    <script src="/public/js/listado_clientes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
